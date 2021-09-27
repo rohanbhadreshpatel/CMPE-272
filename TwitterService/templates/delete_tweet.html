@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Service : Input the tweet ID to delete a tweet!</title>
+  </head>
+  <body>
+	<div>
+		{% extends "template.html" %}
+		{% block content %}
+		<form method="POST" onsubmit="myfunction()">
+			<div>
+				{{ form.hidden_tag() }}
+				{{ form.text.label()}}
+				{{ form.text()}}
+			</div>
+			<div>
+				{{ form.submit(class="btn")}}
+			</div>
+		</form>
+		{% endblock %}
+    </div>
+  </body>
+</html>

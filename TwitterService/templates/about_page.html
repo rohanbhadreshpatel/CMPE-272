@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tweets</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    
+    <h1> Tweets by Hakuna Matata </h1>
+    {% for i in twitterAPI.paging(posts, 50): %}
+		{% for tw in i: %}
+			<p> New Tweet!</p>
+			<p>{{tw.id}}</p>
+			<p>{{tw.text}}</p>
+			<p> -------------------------------------------------- </p>
+		{% endfor %}
+	{% endfor %}
+      
+   
+      
+    {% endblock %}
+  </body>
+</html>

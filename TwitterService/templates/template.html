@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">    
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    
+</head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Twitter Service</h1>
+        <strong><nav>
+          <ul class="menu">
+			  {% with alerts = get_flashed_messages()%}
+				{% if alerts %}
+					{% for alert in alerts%}
+						{{alert}}
+					{% endfor%}
+				{%endif%}
+			  {%endwith%}
+            <li><a href="{{ url_for('home') }}">Post Tweets</a></li>
+            <li><a href="{{ url_for('about') }}">Get All Tweets</a></li>
+            <li><a href="{{ url_for('delete') }}">Delete a Tweet</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+	
+    
+{% block content %}
+{% endblock %}
+
+ </body>
+</html>
